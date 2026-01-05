@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Chat Bot</title>
-  <style>
-    body { font-family: Arial; padding: 20px; background: #f0f0f0; }
-    #messages { margin-bottom: 10px; max-height: 400px; overflow-y: auto; }
-    .msg { margin-bottom: 8px; }
-    input { width: 80%; padding: 10px; }
-    button { padding: 10px; }
-  </style>
-</head>
-<body>
-  <h2>Chat Bot</h2>
-  <div id="messages"></div>
-  <input id="input" placeholder="Type a message..." />
-  <button onclick="send()">Send</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
     async function send() {
       const input = document.getElementById("input");
       const messagesDiv = document.getElementById("messages");
       const text = input.value;
       if (!text) return;
-      messagesDiv.innerHTML += `<div class="msg"><strong>You:</strong> ${text}</div>`;
-      input.value = "";
-
-      // 
-      const OPENAI_KEY = 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   ;
-
+      messagesDiv.innerHTML += `<div class="msg"><st
       const response = await axios.post(
         "https://api.openai.com/v1/chat/completions",
         {
